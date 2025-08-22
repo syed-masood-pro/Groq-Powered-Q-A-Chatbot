@@ -1,7 +1,7 @@
-import streamlit as st # type: ignore
-from langchain_groq import ChatGroq # type: ignore
-from langchain_core.output_parsers import StrOutputParser # type: ignore
-from langchain_core.prompts import ChatPromptTemplate # type: ignore
+import streamlit as st 
+from langchain_groq import ChatGroq 
+from langchain_core.output_parsers import StrOutputParser 
+from langchain_core.prompts import ChatPromptTemplate 
 import os
 from dotenv import load_dotenv
 
@@ -11,7 +11,7 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "Simple Q&A Chatbot with Grok"
 
-# Define prompt properly
+# Defining the system and user prompts for the chatbot
 prompt = ChatPromptTemplate.from_messages(
     [
         ("system", "You are a helpful assistant. Please respond to the user queries"),
@@ -19,14 +19,18 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
+# Function to generate chatbot responses
 def generate_response(question, api_key, llm, temperature, max_tokens):
+     # Initializing Groq LLM with given parameters
     llm = ChatGroq(
         groq_api_key=api_key,
         model_name=llm,
         temperature=temperature,
         max_tokens=max_tokens
     )
+    # Build a processing chain: prompt -> model -> output parser
     chain = prompt | llm | StrOutputParser()
+    # Run the chain with the user question
     response = chain.invoke({"question": question})
     return response
 
@@ -52,4 +56,5 @@ if user_input and api_key:
     st.write("AI: ", response)
 elif not api_key:
     st.warning("Please enter your GROQ API Key in the sidebar.")
+
 
