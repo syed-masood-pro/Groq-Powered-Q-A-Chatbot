@@ -18,7 +18,7 @@ This project is a simple, yet powerful, Q&A chatbot built using **Streamlit** fo
 ## ✨ Key Features
   * **Fast Inference:** Utilizes Groq's low-latency inference engine for near-instantaneous AI responses.
 
-  * **Dynamic Configuration:** Users can select from various supported LLM models (Llama 3, Gemma 2, etc.) and adjust generation parameters like `temperature` and `max_tokens` via a user-friendly sidebar.
+  * **Dynamic Configuration:** Users can select from various supported **LLM models (Llama 3, Gemma 2, Deepseek R1 and OpenAI)** and adjust generation parameters like `temperature` and `max_tokens` via a user-friendly sidebar.
 
   * **Secure API Handling:** Uses a `.env` file to securely manage API keys, ensuring credentials are not exposed in the codebase.
 
