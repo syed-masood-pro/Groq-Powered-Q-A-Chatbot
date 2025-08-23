@@ -1,5 +1,11 @@
 # Groq-Powered Q&A Chatbot
 
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Framework](https://img.shields.io/badge/Framework-Streamlit-FF4B4B?logo=streamlit)
+![LLM](https://img.shields.io/badge/LLM-Groq%20%7C%20LangChain-blueviolet)
+![Language](https://img.shields.io/badge/Language-Python_3.11-yellow?logo=python)  
+
 ## 📝 Table of Contents
 - [📌 About the Project](#-about-the-project)
 - [✨ Key Features](#-key-features)
